@@ -1,0 +1,14 @@
+<p>ng-container works!</p>
+
+<div>
+    <h2>ng-content works</h2>
+
+
+    <div class="products">
+       <ng-container *ngIf="status">
+        <div *ngFor="let item of products" >
+            {{item.name}}
+        </div>
+       </ng-container>
+    </div>
+</div>
