@@ -1,1 +1,53 @@
 <p>form-array works!</p>
+
+<div class="container my-5 col-md-6 shadow rounded-6">
+  <form class="p-3" (ngSubmit)="onSubmit(myForm)" [formGroup]="myForm" ]>
+    <label for="name" class="form-label">Name:</label>
+    <input type="text" class="form-control" formControlName="name" />
+
+    <label for="mbNo" class="form-label">Mobile Number:</label>
+    <input type="text" class="form-control" formControlName="mbNo" />
+
+    <h5 class="mt-3">Family</h5>
+    <button (click)="addMember()" class="btn btn-success" type="button">
+      Add Member</button
+    >&nbsp;&nbsp;
+    <button (click)="removeMember()" class="btn btn-primary" type="button">
+      Remove Member
+    </button>
+    <br />
+
+    <div formArrayName="family">
+      <div *ngFor="let member of members?.controls; let i = index">
+        <div [formGroupName]="i"]>
+          <label for="rname" class="form-label mt-3">Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="rname"
+            id="rname"
+          />
+          <label for="relation" class="form-label mt-3">Relation:</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="relation"
+            id="relation"
+          />
+        </div>
+      </div>
+    </div>
+    <br>
+    <button class="btn btn-success" >Submit</button>
+  </form>
+  <div *ngIf="isSubmitted" class="p-3">
+    <h5>Form Data</h5>
+    <p>Name:{{formData.name}}</p>
+    <p>Mobile Number:{{formData.mbNo}}</p>
+    <ng-container *ngFor="let item of formData.family; let i = index">
+        <h6>Family Member {{i+1}}</h6>
+        <p>Name:{{item.rname}}</p>
+        <p>Relation:{{item.relation}}</p>
+    </ng-container>
+  </div>
+</div>
