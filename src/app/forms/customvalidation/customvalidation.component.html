@@ -4,5 +4,8 @@
     <h1>Login</h1>
     <input formControlName="username" type="text" name="username" placeholder="username">
     <input formControlName="password" type="password" name="password" placeholder="password">
-    <button type="submit">Login</button>
+    <div *ngIf="!loginForm.get('password')?.valid && loginForm.get('password')?.touched">
+        Invalid Password
+    </div>
+    <button type="submit" [disabled]="!loginForm.valid">Login</button>
 </form>

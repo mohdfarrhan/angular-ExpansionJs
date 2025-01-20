@@ -9,7 +9,7 @@ import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validator
 })
 export class CustomvalidationComponent {
 loginForm:any = new FormGroup({
-  username:new FormControl(''),
+  username:new FormControl('',[Validators.required]),
   password:new FormControl('',[Validators.required,this.passwordStrengthValidator])
 })
 

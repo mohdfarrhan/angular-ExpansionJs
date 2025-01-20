@@ -9,6 +9,7 @@ import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } fr
 })
 export class FormArrayComponent {
   constructor(private fb:FormBuilder){}
+  
   isSubmitted: boolean = false;
   count =0;
   formData = {
