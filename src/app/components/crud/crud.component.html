@@ -1,0 +1,36 @@
+ <p>crud works!</p>
+<h1>{{title}}</h1>
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-success" (click)="loadUser()">Load User</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <table class="table table-bordered">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Phone No.</th>
+            </tr>
+            <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.address.city}}</td>
+                <td>{{user.phone}}</td>
+            </tr>
+        </table>
+    </div>
+    
+   
+
+</div> 
+<div class="col-2">
+    {{name}}
+</div>
+
+

@@ -10,6 +10,8 @@ import { childActivateGuard } from './service/child-activate.guard';
 import { FormComponent } from './components/form/form.component';
 import { DefpipeComponent } from './pipes/defpipe/defpipe.component';
 import { NgContentComponent } from './components/ng-content/ng-content.component';
+import { CrudComponent } from './components/crud/crud.component';
+import { AnimationComponent } from './components/animation/animation.component';
 
 export const routes: Routes = [
     {
@@ -55,5 +57,13 @@ export const routes: Routes = [
     {
         path:'ngcontent',
         component:NgContentComponent
+    },
+    {
+        path:"crud",
+        component:CrudComponent
+    },
+    {
+        path:"animation",
+        component:AnimationComponent
     }
 ];
